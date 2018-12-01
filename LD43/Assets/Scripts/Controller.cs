@@ -7,9 +7,12 @@ public class Controller : MonoBehaviour {
     public Rigidbody rb;
     public float speed;
     public float jumpforce;
-
+    
     public float fallmultiplier = 2.5f;
     public float lowJumpmultiplier = 2f;
+
+    private bool mov_right, mov_left, mov_jump;
+
     private void Awake()
     {
         gameObject.name = "Player";
@@ -21,20 +24,38 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		if(Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            mov_right = true;
+        } else
+        {
+            mov_right = false;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            mov_left = true;
         }
-        
-        if(Input.GetButtonDown ("Jump") && grounded())
+        else
+        {
+            mov_left = false;
+        }
+
+        if (Input.GetButtonDown ("Jump") && grounded())
         {
             rb.velocity = Vector3.up * jumpforce;
         }
 
     }
 
+    private void FixedUpdate()
+    {
+        if (mov_right)
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
+        }
+        if(mov_left)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
+    }
     private void LateUpdate()
     {
         if (rb.velocity.y < 0)
