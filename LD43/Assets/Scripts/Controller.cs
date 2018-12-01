@@ -10,8 +10,11 @@ public class Controller : MonoBehaviour {
 
     public float fallmultiplier = 2.5f;
     public float lowJumpmultiplier = 2f;
-
-	void Start () {
+    private void Awake()
+    {
+        gameObject.name = "Player";
+    }
+    void Start () {
         rb = gameObject.GetComponent<Rigidbody>();
 	}
 	
@@ -30,17 +33,21 @@ public class Controller : MonoBehaviour {
             rb.velocity = Vector3.up * jumpforce;
         }
 
+    }
+
+    private void LateUpdate()
+    {
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector3.up * Physics2D.gravity.y * (fallmultiplier - 1) * Time.deltaTime;
-        } else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        }
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             rb.velocity += Vector3.up * Physics2D.gravity.y * (lowJumpmultiplier - 1) * Time.deltaTime;
         }
     }
-
     bool grounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1f);
+        return Physics.Raycast(transform.position, Vector3.down, 1.5f);
     }
 }

@@ -5,12 +5,14 @@ using UnityEngine;
 public class Death : MonoBehaviour {
     public GameObject lik;
     public Vector3 deathpoint;
-	// Use this for initialization
+    public GameObject Playerprefab;
+    public Transform Spawnpos;
+    public bool Makelik;
+
 	void Start () {
-		
+        Spawnpos = GameObject.Find("Spawnpos").transform;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
@@ -20,7 +22,11 @@ public class Death : MonoBehaviour {
         {
             deathpoint = col.gameObject.transform.position;
             Destroy(col.gameObject);
-            Instantiate(lik, deathpoint, Quaternion.identity);
+            if(Makelik)
+            {
+                Instantiate(lik, deathpoint, Quaternion.identity);
+            }
+            Instantiate(Playerprefab, Spawnpos.position, Quaternion.identity);
         }
     }
 }
