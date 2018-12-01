@@ -69,6 +69,6 @@ public class Controller : MonoBehaviour {
     }
     bool grounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.5f);
+        return Physics.Raycast(transform.position, Vector3.down, 1.25f);
     }
 }
