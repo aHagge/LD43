@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour {
 
     private void Awake()
     {
+ 
         gameObject.name = "Player";
     }
     void Start () {

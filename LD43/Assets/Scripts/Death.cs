@@ -26,7 +26,11 @@ public class Death : MonoBehaviour {
             {
                 Instantiate(lik, deathpoint, Quaternion.identity);
             }
-            Instantiate(Playerprefab, Spawnpos.position, Quaternion.identity);
+            int players = (GameObject.FindGameObjectsWithTag("Player").Length);
+            if(players == 1)
+            {
+                Instantiate(Playerprefab, Spawnpos.position, Quaternion.identity);
+            }
         }
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour {
 
-    public int value;
 
-	// Use this for initialization
+    public GameObject Takeneffect;
+
 	void Start () {
 		
 	}
@@ -15,4 +15,15 @@ public class Coin : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Game_manager.level_coins++;
+            Game_manager.total_coins++;
+            Instantiate(Takeneffect, gameObject.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
 }
