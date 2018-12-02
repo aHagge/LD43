@@ -13,6 +13,7 @@ public class Camera : MonoBehaviour {
     {
         if (target != null)
         {
+            print("hola");
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, target.position + offset, smoothSpeed * Time.deltaTime);
             transform.position = smoothedPosition;
         } else
