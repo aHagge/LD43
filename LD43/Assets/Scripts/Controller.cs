@@ -51,10 +51,12 @@ public class Controller : MonoBehaviour {
         if (mov_right)
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         if(mov_left)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
     private void LateUpdate()

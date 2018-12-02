@@ -8,7 +8,7 @@ public class Thrower : MonoBehaviour {
     public GameObject spearprefab;
 
 	void Start () {
-        InvokeRepeating("Spawnspear", 0, 1);
+        InvokeRepeating("Spawnspear", 0, 2.5f);
         
 	}
 	
@@ -18,7 +18,6 @@ public class Thrower : MonoBehaviour {
 	}
     void Spawnspear()
     {
-        print("lol");
-        Instantiate(spearprefab, spawn.position, spawn.rotation);
+        Instantiate(spearprefab, spawn);
     }
 }

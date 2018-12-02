@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 65548811852295216}
   - component: {fileID: 95087721641615262}
   - component: {fileID: 114679536848196488}
+  - component: {fileID: 114771332805949236}
   m_Layer: 0
   m_Name: spjut
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816798062478958}
   m_LocalRotation: {x: 0.61199516, y: 0.3853356, z: -0.5727335, w: 0.3859466}
-  m_LocalPosition: {x: 2.899, y: -1.2234, z: -0.46619}
+  m_LocalPosition: {x: -7.769039, y: 7.6851807, z: -0.5929705}
   m_LocalScale: {x: 0.15061907, y: 0.15061907, z: 0.15061907}
   m_Children:
   - {fileID: 4094527006762984}
@@ -287,8 +288,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 10, z: 1}
-  m_Center: {x: 0, y: 3.6, z: 0}
+  m_Size: {x: 1, y: 1.37, z: 1}
+  m_Center: {x: 0, y: 7.44, z: 0}
 --- !u!95 &95087721641615262
 Animator:
   serializedVersion: 3
@@ -318,4 +319,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2d095f880f47d458be06609c3a2b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
+--- !u!114 &114771332805949236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816798062478958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276ea2005b4353c4798320b4714e6cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lik: {fileID: 1788400141605458, guid: 98c2ca545b503b945916200bf25a4782, type: 2}
+  deathpoint: {fileID: 0}
+  Playerprefab: {fileID: 1106814856817738, guid: 7284f7ca93b8eda4eae43f4ea1eed3a3,
+    type: 2}
+  Spawnpos: {fileID: 0}
+  Makelik: 1

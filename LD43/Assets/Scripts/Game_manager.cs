@@ -6,8 +6,9 @@ using TMPro;
 public class Game_manager : MonoBehaviour {
 
     public Scene[] alllevels;
-    public int level;
-
+    public static int level = 1;
+    public static bool finish;
+    public  int[] lvlcoin;
     private static bool created = false;
     public static int total_coins ,level_coins;
     public static int total_deaths, level_deaths;
@@ -28,6 +29,7 @@ public class Game_manager : MonoBehaviour {
 
     public void Nextlvl()
     {
+        finish = false;
         level++;
         SceneManager.LoadScene(level);
         level_coins = 0;
@@ -35,12 +37,16 @@ public class Game_manager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-		if(cointext != null)
+        if (cointext != null)
         {
-            cointext.text = level_coins.ToString();
+            cointext.text = level_coins.ToString() + "/" + lvlcoin[level];
         } else
         {
             cointext = GameObject.Find("Canvas/Coin text").GetComponent<TextMeshProUGUI>();
+        }
+        if(lvlcoin[level] <= level_coins)
+        {
+            finish = true;
         }
 	}
 }

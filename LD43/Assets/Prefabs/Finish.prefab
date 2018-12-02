@@ -136,7 +136,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.48117012, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.009601339, b: 0, a: 1}
   m_Intensity: 19.37
   m_Range: 1.64
   m_SpotAngle: 30
@@ -176,3 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
+  red: {r: 1, g: 0, b: 0, a: 0}
+  green: {r: 0.14098358, g: 1, b: 0, a: 0}
+  lighta: {fileID: 1645149305190568}

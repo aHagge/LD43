@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Death : MonoBehaviour {
     public GameObject lik;
-    public Vector3 deathpoint;
+    public Transform deathpoint;
     public GameObject Playerprefab;
     public Transform Spawnpos;
     public bool Makelik;
@@ -14,17 +14,17 @@ public class Death : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+        Spawnpos = GameObject.Find("Spawnpos").transform;
 	}
     private void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.tag == "Player")
         {
-            deathpoint = col.gameObject.transform.position;
+            deathpoint = col.gameObject.transform;
             Destroy(col.gameObject);
             if(Makelik)
             {
-                Instantiate(lik, deathpoint, Quaternion.identity);
+                Instantiate(lik, deathpoint.position, Quaternion.Euler( new Vector3(deathpoint.transform.eulerAngles.x - 180, deathpoint.transform.eulerAngles.y, deathpoint.transform.eulerAngles.z - 180)));
             }
             int players = (GameObject.FindGameObjectsWithTag("Player").Length);
             if(players == 1)

@@ -23,6 +23,7 @@ public class Coin : MonoBehaviour {
             Game_manager.level_coins++;
             Game_manager.total_coins++;
             Instantiate(Takeneffect, gameObject.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("Coin");
             Destroy(gameObject);
         }
     }

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586451401868358}
   - component: {fileID: 114058072478837160}
+  - component: {fileID: 114713016174686826}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -51,5 +52,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2281596c75014449e216ef6611cfb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  lvlcoin: 00000000000000000100000002000000020000000100000000000000000000000000000000000000
   cointext: {fileID: 0}
+--- !u!114 &114713016174686826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875170200704706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fde75fbf239ec2439bf8c8b710fd3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Main
+    Clip: {fileID: 8300000, guid: 20d945c2799f4734f83fd85e68c83d61, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    Source: {fileID: 0}
+  - name: Coin
+    Clip: {fileID: 8300000, guid: 3caf4a800ea706c4ab19416e50b45e05, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    Source: {fileID: 0}
+  - name: Throw
+    Clip: {fileID: 8300000, guid: 04c7f2ff1446e924f8ad30d7085f2fce, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    Source: {fileID: 0}
+  volume: {fileID: 0}
+  am: {fileID: 24100000, guid: 6b8eef72ea7fae34fb8ebb89841a356d, type: 2}
